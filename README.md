@@ -1,2 +1,2 @@
-# D4RD
-[ACM MM2024] Digging into contrastive learning for robust depth estimation with diffusion models
+Codes will be public soon!
+The DENSE-snowy-depth dataset will be public soon!
