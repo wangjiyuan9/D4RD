@@ -1,0 +1,9 @@
+ipython==8.11.0
+matplotlib==3.5.0
+numpy==1.21.2
+opencv-python==4.5.5.62
+Pillow==9.4.0
+six==1.16.0
+scikit-image==0.18.3
+tensorboardX==2.6
+chardet

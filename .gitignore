@@ -1,0 +1,10 @@
+*.png
+*.rar
+*.pth
+*.amax
+*.ckpt
+.idea/*
+splits/*
+log_err/*
+figures/*
+ckpt/*
