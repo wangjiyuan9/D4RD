@@ -7,7 +7,7 @@
 
 **ACM MM 2024**
 
-[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2404.09831) [![Static Badge](https://img.shields.io/badge/Youtube-Video-blue)](wait) [![Static Badge](https://img.shields.io/badge/BiliBili-Video-green)](wait)  
+[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2404.09831) [![Static Badge](https://img.shields.io/badge/ZhiHu-Artical-blue)](https://zhuanlan.zhihu.com/p/1894794247015757493) [![Static Badge](https://img.shields.io/badge/BiliBili-Video-green)](https://www.bilibili.com/video/BV1nAd6YbESk)  
 
 <div style="text-align:center">
 <img src="assets/pipline.png"  width="100%" height="100%">
