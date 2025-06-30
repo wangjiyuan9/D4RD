@@ -16,9 +16,67 @@
 
 ## 📢 Upcoming releases & Catalog
 
-- [x] [**release code for training and testing**](#-pretrained-weights-and-evaluation)
-- [x] **train/validate data release**(Please refer to [Weatherdepth](https://github.com/wangjiyuan9/WeatherDepth))
-- [ ] **finish the ReadMe** 
-- [ ] [**test data release**](#-dataset-preparation)(Dense dataset will be available)
-- [ ] [**model release**](#-pretrained-weights-and-evaluation) (D4RD, D4RD+ will be avalible)
-- [ ] **realease the [introduction video]() for the paper**
+- [x] [release code for training and testing](#-pretrained-weights-and-evaluation)
+- [x] train/validate data release(Please refer to [Weatherdepth](https://github.com/wangjiyuan9/WeatherDepth))
+- [ ] finish the ReadMe 
+- [ ] [test data release](#-dataset-preparation)(Dense dataset will be available)
+- [x] **!NEW!** [model release](#-pretrained-weights-and-evaluation) (D4RD, D4RD+ will are **available** at [huggingface](https://huggingface.co/exander/D4RD/tree/main))
+- [x] realease the [introduction video](https://www.bilibili.com/video/BV1nAd6YbESk) for the paper
+
+## 🛠️Environment Setup
+To make the reproduction easy, we provide the condapack package of our environment at [here]()
+
+We implement our method on MonoViT, Mono-Diffusion, and WeatherDepth baselines. If the tar.gz file is not adapted to your machine, you can refer to:
+- [**MonoViT**(3DV2022)](https://github.com/zxcqlf/MonoViT)
+- [**MonoDiffusion**(TCSVT2024)](https://github.com/ShuweiShao/MonoDiffusion)
+- [**WeatherDepth**(ICRA2024)](https://github.com/wangjiyuan9/weatherdepth)
+  
+The training and inference code was tested on:
+- Ubuntu 18.04 LTS, Python 3.8.8, CUDA 11.3, GeForce RTX 3090 (pip, Conda)
+- Ubuntu 16.04 LTS, Python 3.7.15, CUDA 10.0, GeForce RTX 2080Ti (pip, Conda)
+
+## 🖼️ Dataset Preparation
+
+For WeatherDepth dataset Training, please refer to [WeatherDepth](https://github.com/wangjiyuan9/weatherdepth). The training data is exactly the same as theirs.
+
+For KITTI-C dataset Training, please refer to [ECDepth](https://github.com/RuijieZhu94/EC-Depth). The KITTI-C dataset download and arrangement are basically the same as theirs.
+
+For DrivingStereo dataset Testing, please refer to [drivingstereo-website](https://drivingstereo-dataset.github.io/).
+
+For Dense dataset Testing, TBD.
+
+## 💾 Pretrained weights and evaluation
+
+| Models             | abs rel | sq rel | rmse  | rmse log | a1    | a2    | a3    |
+|--------------------|---------|--------|-------|----------|-------|-------|-------|
+| [D4RD](https://huggingface.co/exander/D4RD/tree/main/D4RD) On WeatherKITTI   | 0.099   | 0.688  | 4.377 | 0.174    | 0.897 | 0.966 | 0.984 |
+| [D4RD+](https://huggingface.co/exander/D4RD/tree/main/D4RD-KITTIC) On KITTI-C | 0.108|0.778|4.652|0.183|0.880|0.961|0.983|
+
+
+Use the scripts below to inference and evaluate the model:
+```
+python Evaluate -lwf [Pretrained-Model-Path] --eval_split [Test-Split] --width 640 --height 192 --net_type vit --twt --ud --das -uC --ec
+```
+
+The test splits can be choose from:
+**stereos**(Sunny subset of Drivingstereo Dataset); **stereoc**(Cloudy subset of Drivingstereo Dataset);**stereof**(Foggy subset of Drivingstereo Dataset);**stereor**(Rainy subset of Drivingstereo Dataset);**dense**(Snowy data in Dense dataset)
+
+## ⏳ Training
+TBD
+
+## 🎓 Citation
+```bibtex
+@inproceedings{Wang_2024, series={MM ’24},
+   title={Digging into Contrastive Learning for Robust Depth Estimation with Diffusion Models},
+   url={http://dx.doi.org/10.1145/3664647.3681168},
+   DOI={10.1145/3664647.3681168},
+   booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
+   publisher={ACM},
+   author={Wang, Jiyuan and Lin, Chunyu and Nie, Lang and Liao, Kang and Shao, Shuwei and Zhao, Yao},
+   year={2024},
+   month=oct, pages={4129–4137},
+   collection={MM ’24} }
+```
+
+## 📚 Acknowledgements and License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. The code is based on the MonoViT , Monodiffusion and WeatherDepth repositories. We thank the authors for their contributions. The data is based on the KITTI, Dense, and DrivingStereo datasets. We thank the authors for their contributions. If you have any questions, please feel free to contact us with issues or email.
