@@ -19,7 +19,7 @@
 - [x] [release code for training and testing](#-pretrained-weights-and-evaluation)
 - [x] train/validate data release(Please refer to [Weatherdepth](https://github.com/wangjiyuan9/WeatherDepth))
 - [ ] finish the ReadMe 
-- [ ] [test data release](#-dataset-preparation)(Dense dataset will be available)
+- [x] **!NEW!** [test data release](#-dataset-preparation)([Dense dataset](https://huggingface.co/exander/D4RD/blob/main/dense.tar.gz) are **available**)
 - [x] **!NEW!** [model release](#-pretrained-weights-and-evaluation) (D4RD, D4RD+ will are **available** at [huggingface](https://huggingface.co/exander/D4RD/tree/main))
 - [x] realease the [introduction video](https://www.bilibili.com/video/BV1nAd6YbESk) for the paper
 
@@ -39,12 +39,22 @@ The training and inference code was tested on:
 
 For WeatherDepth dataset Training, please refer to [WeatherDepth](https://github.com/wangjiyuan9/weatherdepth). The training data is exactly the same as theirs.
 
-For KITTI-C dataset Training, please refer to [ECDepth](https://github.com/RuijieZhu94/EC-Depth). The KITTI-C dataset download and arrangement are basically the same as theirs.
+For KITTI-C dataset Training, please refer to [ECDepth](https://github.com/RuijieZhu94/EC-Depth). The KITTI-C dataset download and arrangement are basically the same as theirs. We also provide the Dense dataset image/depth GT at [here](https://huggingface.co/exander/D4RD/blob/main/kitti_c.zip)
 
 For DrivingStereo dataset Testing, please refer to [drivingstereo-website](https://drivingstereo-dataset.github.io/).
 
-For Dense dataset Testing, TBD.
-
+For Dense dataset Testing, please download the tar.gz file from [here](https://huggingface.co/exander/D4RD/blob/main/dense.tar.gz) and untar it. The dataset will be arranged as:
+```
+Path-to-your-Dense-Datset > tree
+.
+├── gt_depths.npy
+└── snowy
+    ├── 2018-02-04_11-14-31_00200.png
+    ├── 2018-02-04_11-14-31_00400.png
+    ├── 2018-02-04_11-18-24_00100.png
+    ├── 2018-02-04_11-20-41_00000.png
+    ...
+```
 ## 💾 Pretrained weights and evaluation
 
 | Models             | abs rel | sq rel | rmse  | rmse log | a1    | a2    | a3    |
@@ -62,7 +72,8 @@ The test splits can be choose from:
 **stereos**(Sunny subset of Drivingstereo Dataset); **stereoc**(Cloudy subset of Drivingstereo Dataset);**stereof**(Foggy subset of Drivingstereo Dataset);**stereor**(Rainy subset of Drivingstereo Dataset);**dense**(Snowy data in Dense dataset)
 
 ## ⏳ Training
-TBD
+
+**The teacher model** is avalible at ...
 
 ## 🎓 Citation
 ```bibtex
