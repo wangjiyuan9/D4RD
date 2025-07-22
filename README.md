@@ -39,7 +39,7 @@ The training and inference code was tested on:
 
 For WeatherDepth dataset Training, please refer to [WeatherDepth](https://github.com/wangjiyuan9/weatherdepth). The training data is exactly the same as theirs.
 
-For KITTI-C dataset Training, please refer to [ECDepth](https://github.com/RuijieZhu94/EC-Depth). The KITTI-C dataset download and arrangement are basically the same as theirs. We also provide the Dense dataset image/depth GT at [here](https://huggingface.co/exander/D4RD/blob/main/kitti_c.zip)
+For KITTI-C dataset Training, please refer to [ECDepth](https://github.com/RuijieZhu94/EC-Depth). The KITTI-C dataset download and arrangement are basically the same as theirs. We also provide the this dataset image/depth GT at [here](https://huggingface.co/exander/D4RD/blob/main/kitti_c.zip)
 
 For DrivingStereo dataset Testing, please refer to [drivingstereo-website](https://drivingstereo-dataset.github.io/).
 
